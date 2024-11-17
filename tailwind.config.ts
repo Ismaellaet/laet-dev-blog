@@ -12,8 +12,8 @@ export default {
     extend: {
       fontFamily: { sans: ["var(--font-sans)", ...fontFamily.sans] },
       colors: {
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        background: "var(--background)",
+        foreground: "var(--foreground)",
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
@@ -28,7 +28,7 @@ export default {
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          foreground: "var(--secondary-foreground)",
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",
