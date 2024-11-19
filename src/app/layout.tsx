@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Header } from "@components/header";
 import { ThemeProvider } from "@components/theme-provider";
+import { Footer } from "@components/footer";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -29,15 +30,18 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
-        <div className="mx-auto max-w-screen-xl w-full">
+        <div className="w-full h-screen flex flex-col">
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
-            <Header />
-            {children}
+            <div className="mx-auto max-w-screen-xl w-full flex-grow">
+              <Header />
+              {children}
+            </div>
+            <Footer />
           </ThemeProvider>
         </div>
       </body>
