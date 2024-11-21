@@ -1,6 +1,6 @@
-import { Tags } from "lucide-react";
-import Link from "next/link";
-import { DateFormatter } from "@components/date-formatter";
+import { Tags } from 'lucide-react';
+import Link from 'next/link';
+import { DateFormatter } from '@components/date-formatter';
 
 type PostPreviewProps = {
   title: string;
@@ -14,7 +14,7 @@ export const PostPreview = ({ title, intro, tags, date }: PostPreviewProps) => {
     text.length > limit ? `${text.slice(0, limit)}...` : text;
 
   return (
-    <article className="bg-card p-5 border-border border rounded-lg shadow-md hover:shadow-lg transition transform">
+    <article className="transform rounded-lg border border-border bg-card p-5 shadow-md transition hover:shadow-lg">
       <Link
         href="#"
         className="text-3xl text-primary-foreground hover:text-foreground"
@@ -26,13 +26,13 @@ export const PostPreview = ({ title, intro, tags, date }: PostPreviewProps) => {
         {`${truncateText(intro, 280)} `}
         <Link
           href="#"
-          className="text-blue-400 hover:text-blue-500 hover:underline transition duration-200"
+          className="text-blue-400 transition duration-200 hover:text-blue-500 hover:underline"
         >
           leia mais →
         </Link>
       </p>
 
-      <div className="border-t mt-3 pt-3 flex justify-between">
+      <div className="mt-3 flex justify-between border-t pt-3">
         <div className="flex items-center gap-2">
           <Tags className="text-border" />
           {tags.map((tag) => (

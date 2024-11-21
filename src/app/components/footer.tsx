@@ -1,10 +1,10 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image';
+import React from 'react';
 
 export const Footer = () => {
   return (
     <footer className="bg-card p-7 text-slate-700 dark:text-slate-400">
-      <div className="max-w-screen-xl flex items-center justify-between gap-5 mx-auto text-center text-sm">
+      <div className="mx-auto flex max-w-screen-xl items-center justify-between gap-5 text-center text-sm">
         <p>© 2024 laet.dev</p>
         <div className="flex justify-center space-x-4">
           <a
