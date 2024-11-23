@@ -5,7 +5,7 @@ export const Posts = () => {
     <section className="mt-5 flex w-full flex-1 flex-col space-y-2">
       <PostPreview
         title="Primeiros passos no Javascript"
-        intro="Lorem Ipsum is simply dummy text of the printing and typesetting
+        excerpt="Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
           scrambled it to make a type specimen book. It has survived"
@@ -14,7 +14,7 @@ export const Posts = () => {
       />
       <PostPreview
         title="Primeiros passos no Javascript"
-        intro="Lorem Ipsum is simply dummy text of the printing and typesetting
+        excerpt="Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
           scrambled it to make a type specimen book. It has survived"
@@ -23,7 +23,7 @@ export const Posts = () => {
       />
       <PostPreview
         title="Primeiros passos no Javascript"
-        intro="Lorem Ipsum is simply dummy text of the printing and typesetting
+        excerpt="Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
           scrambled it to make a type specimen book. It has survived"

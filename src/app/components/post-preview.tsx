@@ -4,12 +4,17 @@ import { DateFormatter } from '@components/date-formatter';
 
 type PostPreviewProps = {
   title: string;
-  intro: string;
+  excerpt: string;
   tags: string[];
   date: string;
 };
 
-export const PostPreview = ({ title, intro, tags, date }: PostPreviewProps) => {
+export const PostPreview = ({
+  title,
+  excerpt,
+  tags,
+  date,
+}: PostPreviewProps) => {
   const truncateText = (text: string, limit: number) =>
     text.length > limit ? `${text.slice(0, limit)}...` : text;
 
@@ -23,7 +28,7 @@ export const PostPreview = ({ title, intro, tags, date }: PostPreviewProps) => {
       </Link>
 
       <p className="mt-3 leading-relaxed">
-        {`${truncateText(intro, 280)} `}
+        {`${truncateText(excerpt, 280)} `}
         <Link
           href="#"
           className="text-blue-400 transition duration-200 hover:text-blue-500 hover:underline"
