@@ -33,7 +33,7 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
-        <div className="flex h-screen w-full flex-col">
+        <div className="flex min-h-screen w-full flex-col">
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
