@@ -1,10 +1,10 @@
+import { Logo } from '@components/logo';
+
 export const Intro = () => {
   return (
     <section>
       <h1 className="text-5xl text-primary-foreground">
-        Bem-vindo ao
-        <span> laet.</span>
-        <span className="italic">dev </span>!
+        Bem-vindo ao <Logo />
       </h1>
 
       <h4 className="mt-4">
