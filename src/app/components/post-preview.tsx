@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { DateFormatter } from '@components/date-formatter';
 
 type PostPreviewProps = {
+  slug: string;
   title: string;
   excerpt: string;
   tags: string[];
@@ -10,6 +11,7 @@ type PostPreviewProps = {
 };
 
 export const PostPreview = ({
+  slug,
   title,
   excerpt,
   tags,
@@ -21,7 +23,7 @@ export const PostPreview = ({
   return (
     <article className="transform rounded-lg border border-border bg-card p-5 shadow-md transition hover:shadow-lg">
       <Link
-        href="#"
+        href={`/blog/posts/${slug}`}
         className="text-3xl text-primary-foreground hover:text-foreground"
       >
         <h3>{title}</h3>
@@ -30,7 +32,7 @@ export const PostPreview = ({
       <p className="mt-3 leading-relaxed">
         {`${truncateText(excerpt, 280)} `}
         <Link
-          href="#"
+          href={`/blog/posts/${slug}`}
           className="text-blue-400 transition duration-200 hover:text-blue-500 hover:underline"
         >
           leia mais →
