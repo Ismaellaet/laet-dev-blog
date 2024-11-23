@@ -3,7 +3,7 @@ import { Logo } from '@components/logo';
 export const Intro = () => {
   return (
     <section>
-      <h1 className="text-5xl text-primary-foreground">
+      <h1 className="text-3xl text-primary-foreground md:text-5xl">
         Bem-vindo ao <Logo />
       </h1>
 

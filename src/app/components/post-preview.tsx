@@ -32,8 +32,8 @@ export const PostPreview = ({ title, intro, tags, date }: PostPreviewProps) => {
         </Link>
       </p>
 
-      <div className="mt-3 flex justify-between border-t pt-3">
-        <div className="flex items-center gap-2">
+      <div className="mt-3 flex flex-col justify-between gap-2 border-t pt-3 sm:flex-row">
+        <div className="flex flex-wrap items-center gap-2">
           <Tags className="text-border" />
           {tags.map((tag) => (
             <div

@@ -2,7 +2,7 @@ import { PostPreview } from '@components/post-preview';
 
 export const Posts = () => {
   return (
-    <section className="mt-5 flex w-full flex-1 flex-col justify-between">
+    <section className="mt-5 flex w-full flex-1 flex-col space-y-2">
       <PostPreview
         title="Primeiros passos no Javascript"
         intro="Lorem Ipsum is simply dummy text of the printing and typesetting

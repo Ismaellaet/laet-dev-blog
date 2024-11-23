@@ -40,7 +40,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <div className="mx-auto flex w-full max-w-screen-xl flex-grow flex-col">
+            <div className="mx-auto flex w-full max-w-screen-xl flex-grow flex-col px-4">
               <Header />
               {children}
             </div>
