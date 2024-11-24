@@ -19,12 +19,21 @@ export const getPostBySlug = (slug: string): Post | null => {
   return { data: { ...data, slug: realSlug }, content } as Post;
 };
 
-export const getPostSlugs = () => {
-  return fs.readdirSync(postsDirectory);
+export const getPostSlugs = (): string[] | null => {
+  try {
+    return fs.readdirSync(postsDirectory);
+  } catch {
+    return null;
+  }
 };
 
 export const getAllPosts = (): Post[] => {
   const slugs = getPostSlugs();
+
+  if (!slugs) {
+    return [];
+  }
+
   const posts = slugs
     .map((slug) => getPostBySlug(slug))
     .sort((post1, post2) => (post1!.data.date > post2!.data.date ? -1 : 1));
