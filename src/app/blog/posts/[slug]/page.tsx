@@ -1,4 +1,4 @@
-import { getPostBySlug } from '@lib/api';
+import { getAllPosts, getPostBySlug } from '@lib/api';
 import { markdownToHtml } from '@lib/markdownToHtml';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
@@ -20,7 +20,7 @@ export default async function Post(props: Props) {
   const content = await markdownToHtml(post.content || '');
 
   return (
-    <main className="prose prose-slate mx-auto my-6 leading-relaxed dark:prose-invert">
+    <main className="prose prose-slate mx-auto my-6 w-full leading-relaxed dark:prose-invert">
       <h1>{post.data.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: content }} />
     </main>
@@ -42,4 +42,12 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     title,
     description,
   };
+}
+
+export async function generateStaticParams() {
+  const posts = getAllPosts();
+
+  return posts.map((post) => ({
+    slug: post.data.slug,
+  }));
 }
