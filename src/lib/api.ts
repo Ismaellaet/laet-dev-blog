@@ -5,7 +5,7 @@ import { join } from 'path';
 
 const postsDirectory = join(process.cwd(), '_posts');
 
-export const getPostBySlug = (slug: string): Post => {
+export const getPostBySlug = (slug: string): Post | null => {
   const realSlug = slug.replace(/\.md$/, '');
   const fullPath = join(postsDirectory, `${realSlug}.md`);
 
@@ -27,6 +27,6 @@ export const getAllPosts = (): Post[] => {
   const slugs = getPostSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug))
-    .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1));
-  return posts;
+    .sort((post1, post2) => (post1!.data.date > post2!.data.date ? -1 : 1));
+  return posts as Post[];
 };
