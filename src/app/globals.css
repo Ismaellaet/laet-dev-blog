@@ -9,7 +9,7 @@ body {
 @layer base {
   :root {
     --background: theme(colors.slate.100);
-    --foreground: theme(colors.slate.800);
+    --foreground: theme(colors.slate.700);
     --card: theme(colors.slate.50);
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
@@ -36,13 +36,13 @@ body {
   }
   .dark {
     --background: theme(colors.slate.900);
-    --foreground: theme(colors.gray.300);
+    --foreground: theme(colors.slate.300);
     --card: theme(colors.slate.800);
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
     --primary: 210 40% 98%;
-    --primary-foreground: theme(colors.gray.100);
+    --primary-foreground: theme(colors.white);
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: #9ca3af;
     --muted: 217.2 32.6% 17.5%;
