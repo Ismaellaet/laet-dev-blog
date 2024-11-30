@@ -1,6 +1,7 @@
 import { Logo } from '@components/logo';
 import { ModeToggle } from '@components/theme-toggle';
 import Link from 'next/link';
+import { LanguageSwitcher } from '@components/language-switcher';
 
 export const Header = () => {
   return (
@@ -13,7 +14,10 @@ export const Header = () => {
           </div>
         </Link>
 
-        <ModeToggle />
+        <div className="flex items-center gap-2">
+          <LanguageSwitcher />
+          <ModeToggle />
+        </div>
       </div>
     </header>
   );

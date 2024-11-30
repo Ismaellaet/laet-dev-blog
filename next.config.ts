@@ -1,5 +1,8 @@
 import type { NextConfig } from 'next';
 import type { Redirect } from 'next/dist/lib/load-custom-routes';
+import createNextIntlPlugin from 'next-intl/plugin';
+
+const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
   async redirects(): Promise<Redirect[]> {
@@ -13,4 +16,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);
