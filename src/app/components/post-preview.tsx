@@ -29,7 +29,10 @@ export const PostPreview = ({
         <h3>{title}</h3>
       </Link>
 
-      <p className="mt-3 leading-relaxed">
+      <p
+        className="mt-3 leading-relaxed"
+        title={excerpt}
+      >
         {`${truncateText(excerpt, 280)} `}
         <Link
           href={`/blog/posts/${slug}`}
