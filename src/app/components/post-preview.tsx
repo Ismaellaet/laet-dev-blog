@@ -36,7 +36,7 @@ export const PostPreview = ({
         {`${truncateText(excerpt, 280)} `}
         <Link
           href={`/blog/posts/${slug}`}
-          className="text-blue-400 transition duration-200 hover:text-blue-500 hover:underline"
+          className="text-blue-700 transition duration-200 hover:text-blue-800 hover:underline dark:text-blue-400 dark:hover:text-blue-500"
         >
           leia mais →
         </Link>
