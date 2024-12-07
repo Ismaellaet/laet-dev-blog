@@ -1,6 +1,7 @@
 import { Tags } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 import { DateFormatter } from '@components/date-formatter';
+import { useTranslations } from 'next-intl';
 
 type PostPreviewProps = {
   slug: string;
@@ -17,6 +18,8 @@ export const PostPreview = ({
   tags,
   date,
 }: PostPreviewProps) => {
+  const t = useTranslations();
+
   const truncateText = (text: string, limit: number) =>
     text.length > limit ? `${text.slice(0, limit)}...` : text;
 
@@ -38,7 +41,7 @@ export const PostPreview = ({
           href={`/blog/posts/${slug}`}
           className="text-blue-700 transition duration-200 hover:text-blue-800 hover:underline dark:text-blue-400 dark:hover:text-blue-500"
         >
-          leia mais →
+          {t('readMore')} →
         </Link>
       </p>
 

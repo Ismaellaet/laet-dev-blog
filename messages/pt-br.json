@@ -1,9 +1,11 @@
 {
   "BlogPage": {
-    "welcome": "Bem vindo ao"
+    "welcome": "Bem vindo ao",
+    "intro": "Aqui você encontra insights, dicas e tutoriais sobre o universo da tecnologia. Meu objetivo é compartilhar aprendizados, boas práticas e ideias que possam ajudar desenvolvedores a crescerem em suas jornadas."
   },
   "LanguageSwitcher": {
     "english": "Inglês",
     "portuguese": "Português"
-  }
+  },
+  "readMore": "leia mais"
 }

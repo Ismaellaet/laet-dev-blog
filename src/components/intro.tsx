@@ -9,11 +9,7 @@ export const Intro = () => {
         {t('welcome')} <Logo />
       </h1>
 
-      <h4 className="mt-4">
-        Aqui você encontra insights, dicas e tutoriais sobre o universo da
-        tecnologia. Meu objetivo é compartilhar aprendizados, boas práticas e
-        ideias que possam ajudar desenvolvedores a crescerem em suas jornadas.
-      </h4>
+      <h4 className="mt-4">{t('intro')}</h4>
     </section>
   );
 };

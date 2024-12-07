@@ -1,9 +1,11 @@
 {
   "BlogPage": {
-    "welcome": "Welcome to"
+    "welcome": "Welcome to",
+    "intro": "Here you will find insights, tips, and tutorials about the world of technology. My goal is to share knowledge, best practices, and ideas that can help developers grow in their journeys."
   },
   "LanguageSwitcher": {
     "english": "English",
     "portuguese": "Portuguese"
-  }
+  },
+  "readMore": "read more"
 }
