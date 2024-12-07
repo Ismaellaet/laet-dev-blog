@@ -1,5 +1,5 @@
 import { Tags } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { DateFormatter } from '@components/date-formatter';
 
 type PostPreviewProps = {

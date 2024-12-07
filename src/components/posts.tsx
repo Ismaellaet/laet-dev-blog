@@ -1,8 +1,10 @@
 import { PostPreview } from '@components/post-preview';
 import { getAllPosts } from '@lib/api';
+import { useLocale } from 'next-intl';
 
 export const Posts = () => {
-  const allPosts = getAllPosts();
+  const locale = useLocale();
+  const allPosts = getAllPosts(locale);
 
   return (
     <section className="mt-5 flex w-full flex-1 flex-col space-y-2">

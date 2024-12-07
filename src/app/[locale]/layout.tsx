@@ -7,7 +7,7 @@ import { ThemeProvider } from '@components/theme-provider';
 import { Footer } from '@components/footer';
 import { getMessages } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
-import { routing } from '@/i18n/routing';
+import { Locale, routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 
 const fontSans = FontSans({
@@ -22,16 +22,17 @@ export const metadata: Metadata = {
     'Aqui você encontra insights, dicas e tutoriais sobre o universo da tecnologia. Meu objetivo é compartilhar aprendizados, boas práticas e ideias que possam ajudar desenvolvedores a crescerem em suas jornadas.',
 };
 
-export default async function RootLayout({
-  children,
-  params,
-}: Readonly<{
+type Props = Readonly<{
   children: React.ReactNode;
-  params: { locale: string };
-}>) {
-  const { locale } = params;
+  params: Promise<{
+    locale: Locale;
+  }>;
+}>;
 
-  if (!routing.locales.includes(locale as any)) {
+export default async function RootLayout({ children, params }: Props) {
+  const { locale } = await params;
+
+  if (!routing.locales.includes(locale as Locale)) {
     notFound();
   }
 

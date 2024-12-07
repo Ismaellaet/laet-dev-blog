@@ -1,3 +1,4 @@
+import { Locale } from '@/i18n/routing';
 import { getAllPosts, getPostBySlug } from '@lib/api';
 import { markdownToHtml } from '@lib/markdownToHtml';
 import { Metadata } from 'next';
@@ -5,13 +6,14 @@ import { notFound } from 'next/navigation';
 
 type Props = {
   params: Promise<{
+    locale: Locale;
     slug: string;
   }>;
 };
 
-export default async function Post(props: Props) {
-  const params = await props.params;
-  const post = getPostBySlug(params.slug);
+export default async function Post({ params }: Props) {
+  const { slug, locale } = await params;
+  const post = getPostBySlug(slug, locale);
 
   if (!post) {
     return notFound();
@@ -27,9 +29,9 @@ export default async function Post(props: Props) {
   );
 }
 
-export async function generateMetadata(props: Props): Promise<Metadata> {
-  const params = await props.params;
-  const post = getPostBySlug(params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug, locale } = await params;
+  const post = getPostBySlug(slug, locale);
 
   if (!post) {
     return notFound();
@@ -44,10 +46,8 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   };
 }
 
-export async function generateStaticParams() {
-  const posts = getAllPosts();
-
-  return posts.map((post) => ({
-    slug: post.data.slug,
-  }));
+export async function generateStaticParams({ params }: Props) {
+  const { locale } = await params;
+  const posts = getAllPosts(locale);
+  return posts.map((slug) => ({ slug }));
 }
